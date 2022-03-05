@@ -13,6 +13,8 @@ const CalendarSchedule = ({ style, data }) => {
         return { position: 'absolute', top: 0, left: index * 50, right: 0, bottom: 0 };
     }, []);
 
+    const keyExtractor = (i, index) => `list_schedule_${index}`;
+
     const renderSchedule = (item, index) => {
         const { appointment_id, avatar, color_code, requester, status, symptom } = item;
 
@@ -45,6 +47,7 @@ const CalendarSchedule = ({ style, data }) => {
 
     return (
         <FlatList
+            keyExtractor={keyExtractor}
             contentContainerStyle={[style]}
             data={listSchedule}
             renderItem={renderItem}
