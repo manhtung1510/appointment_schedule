@@ -16,5 +16,5 @@ export const getImageSource = source => {
     ) {
         return source;
     }
-    return { uri: DEFAULT_AVATAR };
+    return DEFAULT_AVATAR;
 };

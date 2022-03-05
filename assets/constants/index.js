@@ -6,8 +6,8 @@ export const STATUS_CARD = {
     approved: 'approved',
 };
 
-export const DEFAULT_AVATAR =
-    'https://icon-library.com/images/default-profile-icon/default-profile-icon-4.jpg';
+// eslint-disable-next-line global-require
+export const DEFAULT_AVATAR = require('../images/avatarAnynomousMale.jpg');
 
 export const FORMAT_DATE = 'YYYY-MM-DD hh:mm:ss';
 

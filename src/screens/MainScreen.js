@@ -5,16 +5,25 @@ import CalendarSchedule from '@component/CalendarSchedule';
 import { Radius, Spacing } from '@assets/styles';
 import { STATUS_CARD } from '@assets/constants';
 import colors from '@assets/colors';
+import { convertDate } from '@util';
 
-const data = require('@assets/data/calendar.json');
+const dataTemp = require('@assets/data/calendar.json');
 
 const MainScreen = () => {
     const [dataCalendar, setDataCalendar] = useState({});
-    const [title, setTitle] = useState('Lịch khám hôm nay');
+    const [title, setTitle] = useState('Lịch khám');
 
     useEffect(() => {
-        setDataCalendar(data);
+        getTempHeader(dataTemp);
+        setDataCalendar(dataTemp);
     }, []);
+
+    const getTempHeader = dataFromBE => {
+        const { data = [] } = dataFromBE || {};
+        const format = data?.filter?.(item => item.appoitment_calendar?.length > 0);
+        const tempDate = convertDate(format?.[0]?.appoitment_calendar?.[0]?.start_time).format('DD/MM/YYYY');
+        setTitle(`Lịch khám ngày ${tempDate}`);
+    };
 
     const renderMapStatus = (status, index) => {
         return (
