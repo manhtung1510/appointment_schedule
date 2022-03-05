@@ -18,6 +18,7 @@ const MainScreen = () => {
         setDataCalendar(dataTemp);
     }, []);
 
+    // Đúng ra không có hàm này title sẽ được set khi chọn ngày để xem lịch
     const getTempHeader = dataFromBE => {
         const { data = [] } = dataFromBE || {};
         const format = data?.filter?.(item => item.appoitment_calendar?.length > 0);
