@@ -18,7 +18,11 @@
             "@component": ["src/components"],
             "@component/*": ["src/components/*"],
             "@screen": ["src/screens"],
-            "@screen/*": ["src/screens/*"]
+            "@screen/*": ["src/screens/*"],
+            "@hook": ["src/hooks"],
+            "@hook/*": ["src/hooks/*"],
+            "@util": ["src/utils"],
+            "@util/*": ["src/utils/*"],
         }
     },
     "include": ["*", "src"],

@@ -10,6 +10,8 @@ module.exports = {
                     '@assets': './assets',
                     '@component': './src/components',
                     '@screen': './src/screens',
+                    '@hook': './src/hooks',
+                    '@util': './src/utils',
                 },
             },
         ],

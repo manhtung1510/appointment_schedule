@@ -54,5 +54,6 @@ module.exports = {
         'react/no-did-mount-set-state': 0,
         'react/sort-comp': 0,
         'no-unsafe-optional-chaining': 0,
+        'prefer-const': 1,
     },
 };

@@ -9,7 +9,7 @@
         "ios": "react-native run-ios",
         "start": "react-native start -- --reset-cache",
         "test": "jest",
-        "lint": "eslint .",
+        "lint": "eslint ./src",
         "clear": "cd android && ./gradlew clean && cd app && rm -rf build && cd .. && cd .. && watchman watch-del-all && rm -rf yarn.lock && rm -rf node_modules/ && rm -fr $TMPDIR/metro* && rm -rf /tmp/metro-* && cd ios && xcodebuild clean && rm -rf Pods && rm -rf Podfile.lock && cd .."
     },
     "dependencies": {
@@ -17,6 +17,7 @@
         "moment": "^2.29.1",
         "react": "17.0.2",
         "react-native": "0.67.3",
+        "react-native-fast-image": "^8.5.11",
         "react-native-linear-gradient": "^2.5.6"
     },
     "devDependencies": {

@@ -6,4 +6,7 @@ export default {
     pink: '#D62D68',
     orange: '#E8674D',
     grey: '#333333',
+    light_grey: '#616161',
+    line: '#c9cedb',
+    white: '#ffffff'
 };
