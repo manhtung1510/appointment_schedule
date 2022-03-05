@@ -12,6 +12,8 @@ target 'appointment_schedule' do
     :hermes_enabled => false
   )
 
+  pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
+
   target 'appointment_scheduleTests' do
     inherit! :complete
     # Pods for testing

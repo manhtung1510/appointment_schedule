@@ -1,39 +1,47 @@
 {
-  "name": "appointment_schedule",
-  "version": "0.0.1",
+    "name": "appointment_schedule",
+    "version": "0.0.1",
     "private": true,
     "scripts": {
-        "all": "watchman watch-del-all && rm -rf yarn.lock && rm -rf node_modules/ && rm -fr $TMPDIR/metro* && yarn install && cd ios && rm -rf Pods && rm -rf Podfile.lock && pod install --repo-update && cd ..",
-        "allM1": "watchman watch-del-all && rm -rf yarn.lock && rm -rf node_modules/ && rm -fr $TMPDIR/metro* && yarn install && cd ios && rm -rf Pods && rm -rf Podfile.lock && arch -x86_64 pod install --repo-update && cd ..",
+        "all": "watchman watch-del-all && rm -rf yarn.lock && rm -rf node_modules/ && rm -rf $TMPDIR/metro* && rm -rf /tmp/metro-* && yarn install && cd ios && rm -rf Pods && rm -rf Podfile.lock && pod install --repo-update && cd ..",
+        "allM1": "watchman watch-del-all && rm -rf yarn.lock && rm -rf node_modules/ && rm -rf $TMPDIR/metro* && rm -rf /tmp/metro-* && yarn install && cd ios && rm -rf Pods && rm -rf Podfile.lock && arch -x86_64 pod install --repo-update && cd ..",
         "android": "react-native run-android",
         "ios": "react-native run-ios",
-        "start": "react-native start",
+        "start": "react-native start -- --reset-cache",
         "test": "jest",
         "lint": "eslint .",
-        "clear": "watchman watch-del-all && rm -rf yarn.lock && rm -rf node_modules/ && rm -fr $TMPDIR/metro* && cd ios && rm -rf Pods && rm -rf Podfile.lock && cd .. && cd android && cd app && rm -rf build && cd .. && cd .."
+        "clear": "cd android && ./gradlew clean && cd app && rm -rf build && cd .. && cd .. && watchman watch-del-all && rm -rf yarn.lock && rm -rf node_modules/ && rm -fr $TMPDIR/metro* && rm -rf /tmp/metro-* && cd ios && xcodebuild clean && rm -rf Pods && rm -rf Podfile.lock && cd .."
     },
     "dependencies": {
+        "lodash": "^4.17.21",
+        "moment": "^2.29.1",
         "react": "17.0.2",
         "react-native": "0.67.3",
-        "react-native-webview": "^11.17.2"
+        "react-native-linear-gradient": "^2.5.6"
     },
     "devDependencies": {
-        "@babel/core": "^7.12.9",
-        "@babel/eslint-parser": "^7.17.0",
-        "@babel/runtime": "^7.12.5",
-        "@react-native-community/eslint-config": "^2.0.0",
-        "babel-jest": "^26.6.3",
-        "eslint": "7.14.0",
-        "eslint-config-airbnb": "^19.0.4",
+        "@babel/cli": "^7.16.0",
+        "@babel/core": "^7.16.0",
+        "@babel/eslint-parser": "^7.16.3",
+        "@babel/runtime": "^7.16.3",
+        "@react-native-community/eslint-config": "^3.0.1",
+        "babel-cli": "^6.26.0",
+        "babel-eslint": "^10.1.0",
+        "babel-jest": "^27.3.1",
+        "babel-plugin-module-resolver": "^4.1.0",
+        "eslint": "^8.2.0",
+        "eslint-config-airbnb": "^19.0.0",
         "eslint-config-airbnb-base": "^15.0.0",
         "eslint-import-resolver-babel-module": "^5.3.1",
-        "eslint-plugin-import": "^2.25.4",
+        "eslint-plugin-import": "^2.25.3",
         "eslint-plugin-jsx-a11y": "^6.5.1",
-        "eslint-plugin-react": "^7.28.0",
-        "eslint-plugin-react-native": "^4.0.0",
-        "jest": "^26.6.3",
+        "eslint-plugin-react": "^7.27.0",
+        "eslint-plugin-react-native": "^3.11.0",
+        "jest": "^27.3.1",
         "metro-react-native-babel-preset": "^0.66.2",
-        "react-test-renderer": "17.0.2"
+        "prettier": "^2.4.1",
+        "react-test-renderer": "17.0.2",
+        "typescript": "^4.4.4"
     },
     "jest": {
         "preset": "react-native"
