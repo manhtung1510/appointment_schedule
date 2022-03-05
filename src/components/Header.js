@@ -3,6 +3,7 @@ import { Text, StyleSheet } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Colors from '@assets/colors';
 import { FontSize } from '@assets/styles';
+import { DEFAULT_HEIGHT_HEADER } from '@assets/constants';
 
 const Header = ({ title, style, styleTitle }) => {
     return (
@@ -18,7 +19,7 @@ const Header = ({ title, style, styleTitle }) => {
 };
 
 const styles = StyleSheet.create({
-    container: { top: 0, height: 96, justifyContent: 'center', alignItems: 'center' },
+    container: { top: 0, height: DEFAULT_HEIGHT_HEADER, justifyContent: 'center', alignItems: 'center' },
     header: {
         fontWeight: 'bold',
         fontSize: FontSize.XL,

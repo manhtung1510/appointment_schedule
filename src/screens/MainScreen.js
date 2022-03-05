@@ -20,7 +20,7 @@ const MainScreen = () => {
         return (
             <StatusRound
                 key={`status_${index}`}
-                style={{ marginHorizontal: Spacing.XS }}
+                style={styles.marginHorizontal}
                 status={status}
                 desc={status}
             />
@@ -28,12 +28,9 @@ const MainScreen = () => {
     };
 
     return (
-        <View style={{ flex: 1 }}>
+        <View style={styles.flex1}>
             <Header title={title} />
-            <CalendarSchedule
-                style={{ margin: Spacing.M, paddingBottom: 100 }}
-                data={dataCalendar}
-            />
+            <CalendarSchedule style={styles.listSchedule} data={dataCalendar} />
             <View style={styles.bottomContainer}>
                 <View style={styles.viewStatus}>
                     {Object.keys(STATUS_CARD).map(renderMapStatus)}
@@ -44,6 +41,8 @@ const MainScreen = () => {
 };
 
 const styles = StyleSheet.create({
+    flex1: { flex: 1 },
+    listSchedule: { margin: Spacing.M, paddingBottom: 100 },
     bottomContainer: {
         position: 'absolute',
         bottom: 0,
@@ -66,6 +65,7 @@ const styles = StyleSheet.create({
         padding: Spacing.M,
         borderRadius: Radius.XL,
     },
+    marginHorizontal: { marginHorizontal: Spacing.XS },
 });
 
 export default MainScreen;
